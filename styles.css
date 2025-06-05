@@ -196,7 +196,7 @@ body {
     gap: 1rem;
   }
   .questions {
-    display: block;
+    display: none;
     
   }
   .captcha-question {
