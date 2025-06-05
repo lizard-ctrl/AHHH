@@ -1,0 +1,295 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(118, 127, 130);
+    color: #eee;
+    margin: 0; padding: 0;
+    display: flex;
+    height: 100vh;
+  }
+
+  #start{
+    font-size: 120%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 10%;
+    width: 30%;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 20px 20px 30px;
+    row-gap: 20px;
+    gap: 80px;
+}
+
+#startImage{
+    background-image: url(assets/images/start/Untitled\ design\ \(3\)\ copy.png);
+    background-size: contain;
+    height: 90%;
+    width: 15%;
+    background-repeat: no-repeat;
+}
+
+#box{
+    height: 90%;
+    width: 20%;
+    border: solid 2px black;
+    background-repeat: no-repeat;
+}
+
+#info{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    border: solid 2px black;
+    height: 8%; 
+    width: 5%; 
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#info:hover{
+   background-color: black;
+   color: white;
+}
+
+#captchaFour{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 50%;
+}
+
+#captchaFive{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 60%;
+}
+
+#captchaSix{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 50%;
+}
+
+#captchaSeven{
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    height: 70%;
+}
+
+.captcha-question{
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    border: 2px solid black;
+    overflow: hidden;
+   }
+
+   .captchaHeader{
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    width: 96%;
+    height: 20%;
+    border: 2px solid black;
+}
+.questionText{
+    left: 5%;
+    top: 2%;
+    position: absolute;
+    padding: 2% 2%;
+    line-height: .5em;
+}
+
+.buttons{
+    position: absolute;
+    bottom: 7%;
+    left: 60%;
+    width: 110px;
+    height: 50px;
+    background-color: skyblue;
+    color: black;
+    border-radius: 5px;
+    align-content: center;
+}
+
+
+
+.room{
+    display: none;
+    position: absolute;
+    border: solid 2px black;
+    top: 5%;
+    left: 40%;
+    width: 50%;
+    height: 80%;
+    overflow: hidden;
+}
+
+#lamp{
+    position: absolute;
+    width: 50%;
+    bottom: 2%;
+    left: 3%;
+}
+
+#flowers{
+    position: absolute;
+    height: 25%;
+}
+
+#sofa{
+    position: absolute;
+    width: 50%;
+    bottom: 0%;
+    right: 3%;
+}
+
+
+.image-grid {
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    
+  }
+  .image-grid img {
+    border: 2px solid black;
+    width: 70%;
+    cursor: pointer;
+  }
+
+  .image-grid img.selected {
+    border: 2px solid #fff;
+  }
+
+  .sliderFormat{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+ }
+
+ .labelFormat{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 25%;
+    left: 2%;
+ }
+
+  .container {
+ 
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .questions {
+    display: block;
+    
+  }
+  .captcha-question {
+    position: absolute;
+    left: 50%;
+    flex: 1;
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+
+  #currentPoem{
+    border: 2px solid black;
+    padding: 2%;
+    width: 30%;
+    height: 60%;
+  }
+
+  #poemDisplay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    
+    border-radius: 8px;
+    padding: 3%;
+    display: none;
+    color: #fff;
+  }
+  #orbsContainer {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .poemOrb {
+    position: absolute;
+    border-radius: 100%;
+    padding: 3rem;
+    cursor: pointer;
+    user-select: none;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    backdrop-filter: blur(4px);
+    animation: float 6s infinite ease-in-out alternate;
+    background: rgba(202, 116, 116, 0.2);
+    backdrop-filter: blur(5px);
+    color: blue;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    background-color: #555;
+    color: #eee;
+  }
+  button:hover {
+    background-color: #777;
+  }
+  label {
+    display: block;
+    margin: 0.5rem 0;
+    cursor: pointer;
+  }
+ 
+
+  
+  
+  .hidden {
+    display: none;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poetic Captcha Flow</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="start">
+    <div class="start" id="box"></div>
+    <p id="startText">I'm not a robot</p>
+    <div id="startImage"></div>
+  </div>
+
+  <div id="info">
+	<p>?</p>
+  </div>
+
+
+<div class="container">
+  <div class="questions">
+
+    <div id="captchaOne" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+          <p>Select all squares with</p>
+          <p id="boldText">FLOWER</p>
+        </div>
+      </div>
+      <div id="imageGridTwo" class="image-grid"></div>
+      <button class="buttons" id="nextOneBtn">Finish</button>
+   
+      
+    </div>
+
+    
+
+    <div id="captchaTwo" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>I'm not sure you ARE human.... what is LOVE to you</p>
+    </div>
+  </div>
+  <div class="labelFormat">
+      <label><input type="radio" name="question1" value="Every Friendship a flower fallen." /> A friend reaching out a hand to yours</label>
+      <label><input type="radio" name="question1" value="Every Warm night a kiss." /> The first summer night that you are warm</label>
+      <label><input type="radio" name="question1" value="Every Spin makes you dizzy." /> Spinning alone in your room</label>
+    </div>
+      <button class="buttons" id="nextTwoBtn">Next</button>
+   
+    </div>
+
+    <div id="captchaThree" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Are you comfortable?</p>
+      </div>
+      </div>
+      <div class="labelFormat">
+      <label><input type="radio" name="question2" value="Marked decidely." /> Yes</label>
+      <label><input type="radio" name="question2" value="Marked with dignity." /> No</label>
+      <label><input type="radio" name="question2" value="Marked with uncertainty." /> Maybe</label>
+      </div>
+      <button class="buttons" id="nextThreeBtn">Next</button>
+    </div>
+
+    <div id="captchaFour" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Is this better?</p>
+      </div>
+      </div>
+      <div class="labelFormat">
+      <label><input type="radio" name="question3" value="A believer." />Yes</label>
+      <label><input type="radio" name="question3" value="A non believer." />No</label>
+      </div>
+      <button class="buttons" id="nextFourBtn">Next</button>
+    </div>
+
+    <div id="captchaFive" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>How much love is in your heart today?</p>
+      </div>
+      </div>
+      <div class="captchaGrid" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <!-- Ellipse that changes size -->
+         <div class="sliderFormat">
+        <div id="loveEllipse" style="
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: radial-gradient(circle at center, #ff6f91, #ff0000);
+          transition: width 0.3s ease, height 0.3s ease;
+        "></div>
+    
+        <!-- Slider input -->
+        <input
+          type="range"
+          id="loveSlider"
+          min="0"
+          max="100"
+          value="50"
+          style="width: 80%;"
+        />
+      </div>
+        <button class="buttons" id="nextFiveBtn">Submit</button>
+      </div>
+    </div>
+
+    <div id="captchaSix" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Do you think computers dream of love?</p>
+      </div>
+      </div>
+      <div class="labelFormat">
+      <label><input type="radio" name="question6" value="Electric Sheep hunt them down." /> Computers dream of electric sheep </label>
+      <label><input type="radio" name="question6" value="A hope dashes again." /> Computers cannot dream </label>
+      <label><input type="radio" name="question6" value="I believe and I believe and I believe" /> Computers are full of love because I am </label>
+    </div>
+      <button class="buttons" id="nextSixBtn">Next</button>
+    </div>
+    
+    <!-- Q7 (image grid, id="captchaSeven") -->
+    <div id="captchaSeven" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Which is love to you</p>
+      </div>
+      </div>
+      <div class="image-grid" id="imageGrid"></div>
+      <button class="buttons" id="finishBtn">Finish</button>
+    </div>
+
+
+    
+    
+
+    
+  </div>
+
+ 
+
+  <div class="room">
+    <div id="furniture">
+			<img id="lamp" src="assets/images/cozy/lamp.png" alt="sofa" id="sofa">
+			<img id="flowers" src="assets/images/cozy/flowers.png" alt="flowers">
+			<img id="sofa" src="assets/images/cozy/sofa.svg" alt="flowers">
+		</div>
+    AHHHHHWORK OR ILL KILL MYSELF
+  </div>
+
+  <div id="poemDisplay">
+    
+    <div id="currentPoem">
+    <h2>You have Passed</h2>
+    <p id="poemText"></p>
+    <button id="restartBtn" style="display:none;">Restart</button>
+  </div>
+    <div id="orbsContainer"></div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
