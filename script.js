@@ -8,12 +8,11 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  // ─── Global State ────────────────────────────────────────────────────────────
-  let poemLines = [];               // Will hold exactly 5 lines
-  let selectedImageLineFirst = "";  // For #captchaOne (imageGridTwo)
-  let selectedImageLineLast = "";   // For #captchaFive (imageGrid)
+  
+  let poemLines = [];               
+  let selectedImageLineFirst = "";  
+  let selectedImageLineLast = "";   
 
-  // ─── Utility Functions ──────────────────────────────────────────────────────
   
   function showQuestion(id) {
     console.log("🔍 showQuestion called with:", id);
@@ -41,11 +40,11 @@ const firebaseConfig = {
     poemLines = [];
     selectedImageLineFirst = "";
     selectedImageLineLast = "";
-    // Clear all radio selections
+ 
     document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
-    // Clear all selected states in both image grids
+   
     document.querySelectorAll('.image-grid img').forEach(img => img.classList.remove('selected'));
-    // Reset slider to middle (50) and ellipse size
+    
     document.getElementById('loveSlider').value = 50;
     updateEllipseSize(50);
   }
@@ -64,7 +63,6 @@ const firebaseConfig = {
   function createOrb(poemText) {
     const orb = document.createElement('div');
     orb.className = 'poemOrb';
-    // Show only the first sentence/fragment
     orb.innerText = 'other user';
     const container = document.getElementById('orbsContainer');
     const pos = randomPosition(container.clientWidth, container.clientHeight);
@@ -90,7 +88,7 @@ const firebaseConfig = {
     return newRef.set({ poem, timestamp: Date.now() });
   }
 
-  // ─── Question 1: First Image Grid (#captchaOne → imageGridTwo) ───────────────
+  // ─── Q1 ───────────────
   function handleImageClickFirst(e) {
     document.querySelectorAll('#imageGridTwo img').forEach(img => img.classList.remove('selected'));
     e.target.classList.add('selected');
@@ -105,7 +103,7 @@ const firebaseConfig = {
     showQuestion('captchaTwo');
   });
 
-  // ─── Question 2: Radio Buttons (#captchaTwo → question1 → poemLines[1]) ────
+  // ─── Q2 ────
   document.getElementById('nextTwoBtn').addEventListener('click', () => {
     const selected = document.querySelector('input[name="question1"]:checked');
     if (!selected) {
@@ -116,7 +114,7 @@ const firebaseConfig = {
     showQuestion('captchaThree');
   });
 
-  // ─── Question 3: Radio Buttons (#captchaThree → question2 → poemLines[2]) ──
+  // ─── Q3 ──
   document.getElementById('nextThreeBtn').addEventListener('click', () => {
     const selected = document.querySelector('input[name="question2"]:checked');
     if (!selected) {
@@ -128,7 +126,7 @@ const firebaseConfig = {
     document.querySelector('.room').style.display = 'block';
   });
 
-  // ─── Q4: Radio (#captchaFour / name="question3" → poemLines[3]) ─────────────
+  // ─── Q4 ─────────────
 document.getElementById('nextFourBtn').addEventListener('click', () => {
     const selected = document.querySelector('input[name="question3"]:checked');
     if (!selected) {
@@ -136,10 +134,10 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
       return;
     }
     poemLines[3] = selected.value;
-    showQuestion('captchaFive');  // show the slider (Q5)
+    showQuestion('captchaFive'); 
   });
   
-  // ─── Q5: Slider (#captchaFive → loveSlider → poemLines[4]) ───────────────────
+  // ─── Q5 ───────────────────
   document.getElementById('loveSlider').addEventListener('input', function () {
     updateEllipseSize(this.value);
   });
@@ -154,8 +152,8 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
       line = "A full cup spills onto the floor.";
     }
     poemLines[4] = line;
-    console.log("💥 nextFiveBtn clicked");
-    showQuestion('captchaSix'); // advance to Q6 (your next radio or image grid)
+    console.log("💥 work girl");
+    showQuestion('captchaSix'); 
   });
 
   
@@ -175,14 +173,14 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
       alert("Please select an answer for Question 6.");
       return;
     }
-    // Store the Q6 response:
+    // Q6 response:
     poemLines[5] = selected.value;
   
     // Now advance to the defined #captchaSeven
     showQuestion('captchaSeven');
     document.querySelector('.room').style.display = 'none';
   });
-  // ─── Question 5: Second Image Grid (#captchaFive → imageGrid → poemLines[4]) ─
+  // ─── Q5  ─
   function handleImageClickLast(e) {
     document.querySelectorAll('#imageGrid img').forEach(img => img.classList.remove('selected'));
     e.target.classList.add('selected');
@@ -206,7 +204,7 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     document.getElementById('questions').style.display = 'none';
   });
 
-  // ─── Restart Handler ─────────────────────────────────────────────────────────
+  
   document.getElementById('restartBtn').addEventListener('click', () => {
     resetSelections();
     togglePoemDisplay(false);
@@ -214,18 +212,17 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     showQuestion('captchaOne');
   });
 
-  // ─── Populate Both Image Grids ───────────────────────────────────────────────
-  // First grid (#imageGridTwo in CaptchaOne)
+  // Image Grids :P
   const imageOptionsFirst = [
-    { src: 'assets/images/start/flower.png', line: 'A whisper curled through soft fur.' },
-    { src: 'assets/images/start/flower.png', line: 'A silent gaze held timeless mystery.' },
-    { src: 'assets/images/start/flower.png', line: 'Paws padded over dreams.' },
-    { src: 'assets/images/start/flower.png', line: 'Eyes mirrored moonlight.' },
-    { src: 'assets/images/start/flower.png', line: 'Stillness broke into purring light.' },
-    { src: 'assets/images/start/flower.png', line: 'Curiosity danced between shadows.' },
-    { src: 'assets/images/start/flower.png', line: 'Tail traced lines of wonder.' },
-    { src: 'assets/images/start/flower.png', line: 'A stretch yawned into eternity.' },
-    { src: 'assets/images/start/flower.png', line: 'Feline steps etched fleeting magic.' }
+    { src: 'assets/images/flower/1.png', line: 'Everything starts at once.' },
+    { src: 'assets/images/flower/2.png', line: 'Everything hits the wall.' },
+    { src: 'assets/images/flower/3.png', line: 'You are tired.' },
+    { src: 'assets/images/flower/4.png', line: 'You watch unknowingly.' },
+    { src: 'assets/images/flower/5.png', line: 'Some things must not be remembered.' },
+    { src: 'assets/images/flower/6.png', line: 'Everything eats itself.' },
+    { src: 'assets/images/flower/7.png', line: 'Computers sleep too.' },
+    { src: 'assets/images/flower/8.png', line: 'Computers talk to you often.' },
+    { src: 'assets/images/flower/9.png', line: 'Everything needs a heart.' }
   ];
   const gridOne = document.getElementById('imageGridTwo');
   imageOptionsFirst.forEach(option => {
@@ -236,17 +233,17 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     gridOne.appendChild(img);
   });
 
-  // Second grid (#imageGrid in CaptchaFive)
+  // Second grid :D
   const imageOptionsSecond = [
-    { src: 'assets/images/start/flower.png', line: 'Morning light in whispered hues.' },
-    { src: 'assets/images/start/flower.png', line: 'Shadows weaving silent tales.' },
-    { src: 'assets/images/start/flower.png', line: 'Breezes carry distant dreams.' },
-    { src: 'assets/images/start/flower.png', line: 'Stars blink with knowing eyes.' },
-    { src: 'assets/images/start/flower.png', line: 'Raindrops hum forgotten songs.' },
-    { src: 'assets/images/start/flower.png', line: 'Leaves dance in soft embrace.' },
-    { src: 'assets/images/start/flower.png', line: 'Echoes drift through hollow halls.' },
-    { src: 'assets/images/start/flower.png', line: 'Footsteps fade beneath the moon.' },
-    { src: 'assets/images/start/flower.png', line: 'Whispers curl around the flame.' }
+    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
   ];
   const gridTwo = document.getElementById('imageGrid');
   imageOptionsSecond.forEach(option => {
@@ -257,14 +254,14 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     gridTwo.appendChild(img);
   });
 
-  // ─── Initial Setup ──────────────────────────────────────────────────────────
+  // setup wooo
   togglePoemDisplay(false);
   toggleRestartButton(false);
   showQuestion('captchaOne');
   loadAndDisplayAllPoems();
 
   document.querySelector('.start').addEventListener('click', function () {
-    this.style.backgroundImage = "url('assets/images/start/load.gif')"; // Replace with your image path
+    this.style.backgroundImage = "url('assets/images/start/load.gif')"; 
     this.style.border = "none";
     this.style.backgroundSize = "contain";
     this.style.repeat = "no-repeat";

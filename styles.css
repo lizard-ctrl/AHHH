@@ -14,6 +14,7 @@ body {
     left: 5%;
     height: 10%;
     width: 30%;
+    color: black;
     border: solid 2px black;
     display: flex;
     flex-direction: row;
@@ -31,7 +32,7 @@ body {
 }
 
 #box{
-    height: 90%;
+    height: 100%;
     width: 20%;
     border: solid 2px black;
     background-repeat: no-repeat;
@@ -80,13 +81,13 @@ body {
     position: absolute;
     top: 10%;
     left: 45%;
-    height: 70%;
+    height: 75%;
 }
 
 .captcha-question{
     position: absolute;
     width: 400px;
-    height: 700px;
+    height: 600px;
     border: 2px solid black;
     overflow: hidden;
    }
@@ -109,13 +110,12 @@ body {
 
 .buttons{
     position: absolute;
-    bottom: 7%;
-    left: 60%;
+    bottom: 5%;
+    right: 2%;
     width: 110px;
     height: 50px;
-    background-color: skyblue;
+    background-color: darkgray;
     color: black;
-    border-radius: 5px;
     align-content: center;
 }
 
@@ -123,6 +123,8 @@ body {
 
 .room{
     display: none;
+    background-image: url(assets/images/cozy/river.gif);
+    background-size: cover;
     position: absolute;
     border: solid 2px black;
     top: 5%;
@@ -154,8 +156,8 @@ body {
 
 .image-grid {
     position: absolute;
-    top: 25%;
-    left: 6%;
+    top: 23%;
+    left: 2%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
@@ -163,7 +165,7 @@ body {
   }
   .image-grid img {
     border: 2px solid black;
-    width: 70%;
+    width: 90%;
     cursor: pointer;
   }
 
@@ -180,7 +182,7 @@ body {
  }
 
  .labelFormat{
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     position: absolute;
     top: 25%;
@@ -201,6 +203,7 @@ body {
   }
   .captcha-question {
     position: absolute;
+    top: 5%;
     left: 50%;
     flex: 1;
     max-width: 400px;
@@ -208,6 +211,8 @@ body {
   }
 
   #currentPoem{
+    background-image: url(assets/images/poem/flower2.png);
+    background-size: cover;
     border: 2px solid black;
     padding: 2%;
     width: 30%;
@@ -247,7 +252,7 @@ body {
     font-size: 0.9rem;
     backdrop-filter: blur(4px);
     animation: float 6s infinite ease-in-out alternate;
-    background: rgba(202, 116, 116, 0.2);
+    background: rgba(157, 208, 219, 0.2);
     backdrop-filter: blur(5px);
     color: blue;
   }
@@ -261,13 +266,11 @@ body {
     font-size: 1rem;
     margin-top: 1rem;
     cursor: pointer;
-    border-radius: 4px;
     border: none;
-    background-color: #555;
     color: #eee;
   }
   button:hover {
-    background-color: #777;
+    background-color: skyblue;
   }
   label {
     display: block;
