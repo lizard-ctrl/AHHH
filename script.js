@@ -20,7 +20,12 @@ const firebaseConfig = {
       if (div.id === id) {
         console.log("   → Setting", div.id, "to block");
         div.style.display = 'block';
-      } else {
+    
+      if (id === 'captchaTwelve') {
+        startWebcam();
+      }
+    }
+      else {
         console.log("   → Setting", div.id, "to none");
         div.style.display = 'none';
       }
@@ -63,7 +68,7 @@ const firebaseConfig = {
   function createOrb(poemText) {
     const orb = document.createElement('div');
     orb.className = 'poemOrb';
-    orb.innerText = 'other user';
+    orb.innerText = 'other human';
     const container = document.getElementById('orbsContainer');
     const pos = randomPosition(container.clientWidth, container.clientHeight);
     orb.style.left = `${pos.x}px`;
@@ -100,6 +105,15 @@ const firebaseConfig = {
       return;
     }
     poemLines[0] = selectedImageLineFirst;
+    showQuestion('captchaOneInsert');
+  });
+
+  document.getElementById('nextOneInsertBtn').addEventListener('click', () => {
+    if (!selectedImageLineFirst) {
+      alert("Please select an image.");
+      return;
+    }
+    poemLines[7] = selectedImageLineFirst;
     showQuestion('captchaTwo');
   });
 
@@ -153,9 +167,17 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     }
     poemLines[4] = line;
     console.log("💥 work girl");
-    showQuestion('captchaSix'); 
+    showQuestion('captchaSixInsert'); 
   });
 
+  document.getElementById('nextSixInsertBtn').addEventListener('click', () => {
+    if (!selectedImageLineFirst) {
+      alert("Please select an image.");
+      return;
+    }
+    poemLines[8] = selectedImageLineFirst;
+    showQuestion('captchaSix');
+  });
   
   
  
@@ -177,9 +199,177 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     poemLines[5] = selected.value;
   
     // Now advance to the defined #captchaSeven
-    showQuestion('captchaSeven');
-    document.querySelector('.room').style.display = 'none';
+    showQuestion('captchaSevenInsert');
+    
   });
+
+  document.getElementById('nextSevenInsertBtn').addEventListener('click', () => {
+    
+    showQuestion('captchaSevenInsert2');
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('nextSevenInsertBtn2').addEventListener('click', () => {
+      const inputElem = document.getElementById('question7Input');
+      
+      if (!inputElem) {
+        console.error("question7Input not found in the DOM");
+        return;
+      }
+  
+      const input = inputElem.value.trim();
+  
+      if (!input) {
+        alert("Please describe your first kiss before continuing.");
+        return;
+      }
+  
+      poemLines[6] = input;
+      showQuestion('captchaEight');
+    });
+  });
+
+
+  const nextEightBtn = document.getElementById('nextEightBtn');
+if (nextEightBtn) {
+  nextEightBtn.addEventListener('click', () => {
+    showQuestion('captchaNine');
+  });
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('nextNineBtn').addEventListener('click', () => {
+    const inputElem = document.getElementById('question9Input');
+    
+    if (!inputElem) {
+      console.error("question7Input not found in the DOM");
+      return;
+    }
+
+    const input = inputElem.value.trim();
+
+    if (!input) {
+      alert("Please describe your first kiss before continuing.");
+      return;
+    }
+
+    poemLines[9] = input;
+    showQuestion('captchaTen');
+  });
+});
+
+document.querySelectorAll('#captchaTen .captchaTenSlider').forEach(slider => {
+  slider.addEventListener('input', () => {
+    const targetId = slider.getAttribute('data-target');
+    const image = document.getElementById(targetId);
+    const scale = slider.value / 100;
+
+    // Horizontal stretch
+    image.style.transform = `scaleX(${scale})`;
+  });
+});
+
+document.getElementById('nextTenBtn').addEventListener('click', () => {
+    
+  showQuestion('captchaEleven');
+});
+
+document.getElementById('nextElevenBtn').addEventListener('click', () => {
+  if (!selectedImageLineFirst) {
+    alert("Please select an image.");
+    return;
+  }
+  poemLines[10] = selectedImageLineFirst;
+  showQuestion('captchaTwelve');
+});
+
+document.getElementById('nextTwelveBtn').addEventListener('click', () => {
+    
+  showQuestion('captchaThirteen');
+  document.querySelector('.room').style.display = 'none';
+  document.body.style.backgroundColor = 'black';
+
+});
+
+document.getElementById('nextThirteenBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="question7"]:checked');
+  if (!selected) {
+    alert("Please select an answer for Question 4.");
+    return;
+  }
+  poemLines[11] = selected.value;
+  showQuestion('captchaFourteen'); 
+});
+
+document.getElementById('nextFourteenBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="question8"]:checked');
+  if (!selected) {
+    alert("Please select an answer for Question 4.");
+    return;
+  }
+  poemLines[12] = selected.value;
+  showQuestion('captchaFifteen'); 
+});
+
+document.getElementById('nextFifteenBtn').addEventListener('click', () => {
+    
+  showQuestion('captchaSixteen');
+});
+
+document.getElementById('nextSixteenBtn').addEventListener('click', () => {
+    
+  showQuestion('captchaSeventeen');
+});
+
+document.getElementById('nextSeventeenBtn').addEventListener('click', () => {
+  if (!selectedImageLineFirst) {
+    alert("Please select an image.");
+    return;
+  }
+  poemLines[13] = selectedImageLineFirst;
+  showQuestion('captchaEighteen');
+});
+
+document.getElementById('nextEighteenBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="question9"]:checked');
+  if (!selected) {
+    alert("Please select an answer for Question 4.");
+    return;
+  }
+  poemLines[14] = selected.value;
+  showQuestion('captchaNineteen'); 
+});
+
+document.getElementById('nextNineteenBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="question10"]:checked');
+  if (!selected) {
+    alert("Please select an answer for Question 4.");
+    return;
+  }
+  poemLines[15] = selected.value;
+  showQuestion('captchaTwenty'); 
+});
+
+document.getElementById('nextTwentyBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="question10"]:checked');
+  if (!selected) {
+    alert("Please select an answer for Question 4.");
+    return;
+  }
+  poemLines[15] = selected.value;
+  showQuestion('captchaTwenty'); 
+});
+
+document.getElementById('nextTwentyBtn').addEventListener('click', () => {
+  if (!selectedImageLineFirst) {
+    alert("Please select an image.");
+    return;
+  }
+  poemLines[16] = selectedImageLineFirst;
+  showQuestion('captchaSeven');
+});
+
   // ─── Q5  ─
   function handleImageClickLast(e) {
     document.querySelectorAll('#imageGrid img').forEach(img => img.classList.remove('selected'));
@@ -191,7 +381,7 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
       alert("Please select an image.");
       return;
     }
-    poemLines[6] = selectedImageLineLast;
+    poemLines[17] = selectedImageLineLast;
     const finalPoem = poemLines.join(" ");
     savePoem(finalPoem).then(() => {
       displayPoem(finalPoem);
@@ -214,15 +404,15 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
 
   // Image Grids :P
   const imageOptionsFirst = [
-    { src: 'assets/images/flower/1.png', line: 'Everything starts at once.' },
-    { src: 'assets/images/flower/2.png', line: 'Everything hits the wall.' },
-    { src: 'assets/images/flower/3.png', line: 'You are tired.' },
-    { src: 'assets/images/flower/4.png', line: 'You watch unknowingly.' },
-    { src: 'assets/images/flower/5.png', line: 'Some things must not be remembered.' },
-    { src: 'assets/images/flower/6.png', line: 'Everything eats itself.' },
-    { src: 'assets/images/flower/7.png', line: 'Computers sleep too.' },
-    { src: 'assets/images/flower/8.png', line: 'Computers talk to you often.' },
-    { src: 'assets/images/flower/9.png', line: 'Everything needs a heart.' }
+    { src: 'assets/images/bus/bus1.jpg', line: 'Everything starts at once.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Everything hits the wall.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'You are tired.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'You watch unknowingly.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Some things must not be remembered.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Everything eats itself.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Computers sleep too.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Computers talk to you often.' },
+    { src: 'assets/images/bus/bus1.jpg', line: 'Everything needs a heart.' }
   ];
   const gridOne = document.getElementById('imageGridTwo');
   imageOptionsFirst.forEach(option => {
@@ -235,6 +425,27 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
 
   // Second grid :D
   const imageOptionsSecond = [
+    { src: 'assets/images/flower/1.png', line: 'Everything starts at once.' },
+    { src: 'assets/images/flower/7.png', line: 'Everything hits the wall.' },
+    { src: 'assets/images/flower/3.png', line: 'You are tired.' },
+    { src: 'assets/images/flower/4.png', line: 'You watch unknowingly.' },
+    { src: 'assets/images/flower/8.png', line: 'Some things must not be remembered.' },
+    { src: 'assets/images/flower/6.png', line: 'Everything eats itself.' },
+    { src: 'assets/images/flower/5.png', line: 'Computers sleep too.' },
+    { src: 'assets/images/flower/9.png', line: 'Computers talk to you often.' },
+    { src: 'assets/images/flower/2.png', line: 'Everything needs a heart.' }
+  ];
+  const gridTwo = document.getElementById('imageGrid');
+  imageOptionsSecond.forEach(option => {
+    const img = document.createElement('img');
+    img.src = option.src;
+    img.setAttribute('data-line', option.line);
+    img.addEventListener('click', handleImageClickLast);
+    gridTwo.appendChild(img);
+  });
+
+   // Second grid :D
+   const imageOptionsThird = [
     { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
     { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
     { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
@@ -245,13 +456,119 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
     { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
     { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
   ];
-  const gridTwo = document.getElementById('imageGrid');
+  const gridThree = document.getElementById('imageGridThree');
   imageOptionsSecond.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
     img.addEventListener('click', handleImageClickLast);
-    gridTwo.appendChild(img);
+    gridThree.appendChild(img);
+  });
+
+  const imageOptionsFour = [
+    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+  ];
+  const gridFour = document.getElementById('imageGridFour');
+  imageOptionsSecond.forEach(option => {
+    const img = document.createElement('img');
+    img.src = option.src;
+    img.setAttribute('data-line', option.line);
+    img.addEventListener('click', handleImageClickLast);
+    gridFour.appendChild(img);
+  });
+
+  const imageOptionsFive = [
+    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+  ];
+  const gridFive = document.getElementById('imageGridFive');
+  imageOptionsSecond.forEach(option => {
+    const img = document.createElement('img');
+    img.src = option.src;
+    img.setAttribute('data-line', option.line);
+    img.addEventListener('click', handleImageClickLast);
+    gridFive.appendChild(img);
+  });
+
+  const imageOptionsSix = [
+    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+  ];
+  const gridSix = document.getElementById('imageGridSix');
+  imageOptionsSecond.forEach(option => {
+    const img = document.createElement('img');
+    img.src = option.src;
+    img.setAttribute('data-line', option.line);
+    img.addEventListener('click', handleImageClickLast);
+    gridSix.appendChild(img);
+  });
+
+  const imageOptionsSeven = [
+    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+  ];
+  const gridSeven = document.getElementById('imageGridSeven');
+  imageOptionsSecond.forEach(option => {
+    const img = document.createElement('img');
+    img.src = option.src;
+    img.setAttribute('data-line', option.line);
+    img.addEventListener('click', handleImageClickLast);
+    gridSeven.appendChild(img);
+  });
+
+  class FlashingImage {
+    constructor(element, imageList, interval = 1500) {
+      this.element = element;
+      this.images = imageList;
+      this.interval = interval;
+      this.currentIndex = 0;
+      this.start();
+    }
+  
+    start() {
+      this.updateImage();
+      this.timer = setInterval(() => this.updateImage(), this.interval);
+    }
+  
+    updateImage() {
+      this.element.style.backgroundImage = `url('${this.images[this.currentIndex]}')`;
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }
+  }
+  
+  // Initialize all flashingImage blocks
+  document.querySelectorAll('.flashingImage').forEach(div => {
+    const images = JSON.parse(div.getAttribute('data-images'));
+    new FlashingImage(div, images);
   });
 
   // setup wooo
@@ -271,3 +588,14 @@ document.getElementById('nextFourBtn').addEventListener('click', () => {
       }, 3000);
 
   });
+
+  async function startWebcam() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const video = document.getElementById('webcamFeed');
+      video.srcObject = stream;
+    } catch (err) {
+      console.error("Webcam access denied:", err);
+      alert("Could not access webcam. Please allow camera access.");
+    }
+  }

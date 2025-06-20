@@ -84,6 +84,73 @@ body {
     height: 75%;
 }
 
+#captchaSevenInsert {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  height: 60%;
+}
+
+#captchaSevenInsert2 {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  height: 40%;
+}
+
+#question7Input{
+  width: 50%; 
+  height: 30%;
+  max-width: 500px; 
+  margin: 20px auto; 
+  display: block;
+}
+
+#question9Input{
+  width: 50%; 
+  height: 30%;
+  max-width: 500px; 
+  margin: 20px auto; 
+  display: block;
+}
+
+#captchaNine{
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  height: 40%;
+}
+
+#captchaEight{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  height: 60%;
+}
+
+#captchaTen{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  height: 70%;
+}
+
+#captchaEleven{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  height: 70%;
+}
+
+#captchaTwelve{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  height: 70%;
+}
+
+
+
 .captcha-question{
     position: absolute;
     width: 400px;
@@ -100,12 +167,48 @@ body {
     height: 20%;
     border: 2px solid black;
 }
+
+.captchaThirteen{
+  position: absolute;
+  top: 15%;
+  left: 38%;
+  width: 400px;
+  height: 600px;
+  border: 2px solid white;
+  overflow: hidden;
+ }
+
+ #white{
+  color: white;
+ }
+
+ #white2{
+  color: white;
+ }
+
+ #white3{
+  color: white;
+ }
+
+ #white4{
+  color: white;
+ }
+
+.captcha13{
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: 96%;
+  height: 20%;
+  border: 2px solid white;
+}
+
 .questionText{
     left: 5%;
     top: 2%;
     position: absolute;
-    padding: 2% 2%;
-    line-height: .5em;
+    padding: 4% 2%;
+    line-height: 1em;
 }
 
 .buttons{
@@ -291,8 +394,95 @@ body {
   }
   
   
+  #captchaSixInsert{
+    left: 5%;
+    top: 25%;
+    display: block;
+  }
   
+  .flashingImage {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    width: 80%;
+    height: 50%;
+    margin: 20px auto;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ccc;
+  }
   
+  #question7Input{
+    position: absolute;
+    top: 20%;
+  }
+
+  #question9Input{
+    position: absolute;
+    top: 20%;
+  }
+
   
+
+  #captchaTen .image-distort-wrapper {
+    margin: 0px 0;
+    text-align: center;
+  }
   
+  /* Image box that will be distorted */
+  #captchaTen .distortable-image {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto 10px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
   
+    border-radius: 8px;
+  }
+
+  #distortImages{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 60%;
+  }
+  
+  /* Image placeholders — replace with your real image paths */
+  #captchaTen #captchaTenImage1 {
+    background-image: url('assets/images/computer/12.png');
+  }
+  
+  #captchaTen #captchaTenImage2 {
+    background-image: url('assets/images/flower/4.png');
+  }
+  
+  #captchaTen #captchaTenImage3 {
+    background-image: url('assets/images/cozy/river.gif');
+  }
+  
+  /* Sliders under each image */
+  #captchaTen .captchaTenSlider {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #webcamContainer {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: black;
+  }
+  
+  #webcamFeed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

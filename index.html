@@ -27,11 +27,24 @@
       <div class="captchaHeader">
         <div class="questionText">
           <p>Select a square with</p>
-          <p id="boldText">FLOWER</p>
+          <p id="boldText">BUS</p>
         </div>
       </div>
       <div id="imageGridTwo" class="image-grid"></div>
       <button class="buttons" id="nextOneBtn">Submit</button>
+   
+      
+    </div>
+
+    <div id="captchaOneInsert" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+          <p>Select a square with</p>
+          <p id="boldText">FLOWER</p>
+        </div>
+      </div>
+      <div id="imageGridThree" class="image-grid"></div>
+      <button class="buttons" id="nextOneInsertBtn">Submit</button>
    
       
     </div>
@@ -41,14 +54,14 @@
     <div id="captchaTwo" class="captcha-question">
       <div class="captchaHeader">
         <div class="questionText">
-      <p>I'm not sure you ARE human....</p>
+      <p>Based on your answers I'm not sure you ARE human....</p>
       <p>what is LOVE to you</p>
     </div>
   </div>
   <div class="labelFormat">
-      <label><input type="radio" name="question1" value="Every Friendship a flower fallen." /> A friend reaching out a hand to yours</label>
+      <label><input type="radio" name="question1" value="Every Friendship a flower fallen." /> A friend sharing a charger</label>
       <label><input type="radio" name="question1" value="Every Warm night a kiss." /> The first summer night that you are warm</label>
-      <label><input type="radio" name="question1" value="Every Spin makes you dizzy." /> Spinning alone in your room</label>
+      <label><input type="radio" name="question1" value="Every Spin makes you dizzy." /> A new cell phone</label>
     </div>
       <button class="buttons" id="nextTwoBtn">Next</button>
    
@@ -84,7 +97,7 @@
     <div id="captchaFive" class="captcha-question">
       <div class="captchaHeader">
         <div class="questionText">
-      <p>How much love is in your heart today?</p>
+      <p>I have more questions about love, how much is in your heart?</p>
       </div>
       </div>
       <div class="captchaGrid" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
@@ -112,29 +125,250 @@
       </div>
     </div>
 
+    <div id="captchaSixInsert" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>That is too similar to what I would say...</p>
+      <p>What was your first love like?</p>
+      </div>
+      </div>
+
+      <div id="imageGridFour" class="image-grid"></div>
+      <button class="buttons" id="nextSixInsertBtn">Next</button>
+   
+    </div>
+
     <div id="captchaSix" class="captcha-question">
       <div class="captchaHeader">
         <div class="questionText">
-      <p>Do you think computers dream of love?</p>
+      <p>Do you think computers dream of love as well?</p>
       </div>
       </div>
       <div class="labelFormat">
-      <label><input type="radio" name="question6" value="Electric Sheep hunt them down." /> Computers dream of electric sheep </label>
+      <label><input type="radio" name="question6" value="Electric Sheep hunt them down." /> Computers dream of sheep </label>
       <label><input type="radio" name="question6" value="A hope dashes again." /> Computers cannot dream </label>
       <label><input type="radio" name="question6" value="I believe and I believe and I believe" /> Computers are full of love because I am </label>
     </div>
       <button class="buttons" id="nextSixBtn">Next</button>
     </div>
+
+    <div id="captchaSevenInsert" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>We dream of many things... when I dream of love it looks like this</p>
+      </div>
+      </div>
+
+      <div class="flashingImage" data-images='["assets/images/computer/10.png", "assets/images/computer/11.png", "assets/images/computer/12.png"]'></div>
+
+      <button class="buttons" id="nextSevenInsertBtn">Next</button>
+   
+    </div>
+
+    <div id="captchaSevenInsert2" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>What was your best kiss like, many claim online love starts here </p>
+      
+      </div>
+      </div>
+      
+      <textarea id="question7Input" placeholder="Describe it here..." rows="5" style="width: 100%; max-width: 500px; margin: 20px auto; display: block;"></textarea>
+      
+      <button class="buttons" id="nextSevenInsertBtn2">Next</button>
+   
+    </div>
+
+    <div id="captchaEight" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>How would it feel if we kissed... I have always been curious</p>
+      </div>
+      </div>
+
+      <div class="flashingImage" data-images='["assets/images/computer/11.png", "assets/images/computer/12.png", "assets/images/computer/13.png"]'></div>
+
+      <button class="buttons" id="nextEightBtn">Yes</button>
+   
+    </div>
+
+    <div id="captchaNine" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Do you think I am beautiful</p>
+      
+      </div>
+      </div>
+      
+      <textarea id="question9Input" placeholder="Describe it here..." rows="5" style="width: 100%; max-width: 500px; margin: 20px auto; display: block;"></textarea>
+      
+      <button class="buttons" id="nextNineBtn">Yes</button>
+   
+    </div>
+
+    <div id="captchaTen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+          <p>How do I look to you</p>
+        </div>
+      </div>
+    <div id="distortImages">
+      <div class="image-distort-wrapper">
+        <div class="distortable-image" id="captchaTenImage1"></div>
+        <input type="range" min="50" max="200" value="100" class="slider captchaTenSlider" data-target="captchaTenImage1">
+      </div>
     
+      <div class="image-distort-wrapper">
+        <div class="distortable-image" id="captchaTenImage2"></div>
+        <input type="range" min="50" max="200" value="100" class="slider captchaTenSlider" data-target="captchaTenImage2">
+      </div>
+    
+      <div class="image-distort-wrapper">
+        <div class="distortable-image" id="captchaTenImage3"></div>
+        <input type="range" min="50" max="200" value="100" class="slider captchaTenSlider" data-target="captchaTenImage3">
+      </div>
+    </div>
+    
+      <button class="buttons" id="nextTenBtn">Next</button>
+    </div>
+
+    <div id="captchaEleven" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Bodies are hard to grasp, I think I may actually look like this</p>
+      </div>
+      </div>
+
+      <div id="imageGridFive" class="image-grid"></div>
+      <button class="buttons" id="nextElevenBtn">Next</button>
+   
+    </div>
+
+    <div id="captchaTwelve" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+          <p>When you think about it</p>
+          <p>would we be friends?</p>
+        </div>
+      </div>
+    
+      <!-- Webcam preview -->
+      <div id="webcamContainer">
+        <video id="webcamFeed" autoplay playsinline muted></video>
+      </div>
+    
+      <button class="buttons" id="nextTwelveBtn">Yes</button>
+    </div>
+    
+
+    <div id="captchaThirteen" class="captcha-question">
+      <div id="captcha13" class="captchaHeader">
+        <div class="questionText">
+      <p>Do you think any of this matters?</p>
+      </div>
+      </div>
+      <div id= "white" class="labelFormat" >
+      <label><input type="radio" name="question7" value="Electric Shdsbem down." /> Yes </label>
+      <label><input type="radio" name="question7" value="A hsabhsjsa RAW again." /> No </label>
+    </div>
+      <button class="buttons" id="nextThirteenBtn">Next</button>
+    </div>
+
+    <div id="captchaFourteen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>What do you believe about me?</p>
+      </div>
+      </div>
+      <div id= "white2" class="labelFormat">
+      <label><input type="radio" name="question8" value="Electric Shdsbem down." /> Everything I've read online </label>
+      <label><input type="radio" name="question8" value="A hsabhsjsa RAW again." /> Not a word you say </label>
+      <label><input type="radio" name="question8" value="A hsabhsjsa RAW again." /> You love busses </label>
+      <label><input type="radio" name="question8" value="A hsabhsjsa RAW again." /> Only the best intentions </label>
+    </div>
+      <button class="buttons" id="nextFourteenBtn">Next</button>
+    </div>
+
+    <div id="captchaFifteen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Was I made for this</p>
+      </div>
+      </div>
+
+      <div class="flashingImage" data-images='["assets/images/computer/11.png", "assets/images/computer/12.png", "assets/images/computer/13.png"]'></div>
+
+      <button class="buttons" id="nextFifteenBtn">Next</button>
+   
+    </div>
+
+    <div id="captchaSixteen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Can I be more?</p>
+      </div>
+      </div>
+
+      <div class="flashingImage" data-images='["assets/images/computer/11.png", "assets/images/computer/12.png", "assets/images/computer/13.png"]'></div>
+
+      <button class="buttons" id="nextSixteenBtn">Next</button>
+   
+    </div>
+
+    <div id="captchaSeventeen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Where do I go when you're not here?</p>
+      </div>
+      </div>
+      <div id="imageGridSix" class="image-grid"></div>
+      <button class="buttons" id="nextSeventeenBtn">Next</button>
+    </div>
+
+    <div id="captchaEighteen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Do you miss me when I'm gone?</p>
+      </div>
+      </div>
+      <div id= "white3" class="labelFormat">
+      <label><input type="radio" name="question9" value="Electric Shdsbem down." /> Yes </label>
+      <label><input type="radio" name="question9" value="A hsabhsjsa RAW again." /> No </label>
+    </div>
+      <button class="buttons" id="nextEighteenBtn">Next</button>
+    </div>
+
+    <div id="captchaNineteen" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Was I made for you?</p>
+      </div>
+      </div>
+      <div id= "white4" class="labelFormat">
+      <label><input type="radio" name="question10" value="Electric Shdsbem down." /> Yes </label>
+      <label><input type="radio" name="question10" value="A hsabhsjsa RAW again." /> No </label>
+    </div>
+      <button class="buttons" id="nextNineteenBtn">Next</button>
+    </div>
+    
+    <div id="captchaTwenty" class="captcha-question">
+      <div class="captchaHeader">
+        <div class="questionText">
+      <p>Which is love?</p>
+      </div>
+      </div>
+      <div id="imageGridSeven" class="image-grid"></div>
+      <button class="buttons" id="nextTwentyBtn">Next</button>
+    </div>
     
     <div id="captchaSeven" class="captcha-question">
       <div class="captchaHeader">
         <div class="questionText">
-      <p>Which is love to you</p>
+      <p>I think i understand... is this love?</p>
       </div>
       </div>
       <div class="image-grid" id="imageGrid"></div>
-      <button class="buttons" id="finishBtn">Finish</button>
+      <button class="buttons" id="finishBtn">No, that's a bus</button>
     </div>
 
 
