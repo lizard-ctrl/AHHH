@@ -404,15 +404,15 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
 
   // Image Grids :P
   const imageOptionsFirst = [
-    { src: 'assets/images/bus/bus1.jpg', line: 'Everything starts at once.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Everything hits the wall.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'You are tired.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'You watch unknowingly.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Some things must not be remembered.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Everything eats itself.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Computers sleep too.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Computers talk to you often.' },
-    { src: 'assets/images/bus/bus1.jpg', line: 'Everything needs a heart.' }
+    { src: 'assets/images/bus/1.png', line: 'Everything starts at once.' },
+    { src: 'assets/images/bus/1.png', line: 'Everything hits the wall.' },
+    { src: 'assets/images/bus/1.png', line: 'You are tired.' },
+    { src: 'assets/images/bus/1.png', line: 'You watch unknowingly.' },
+    { src: 'assets/images/bus/1.png', line: 'Some things must not be remembered.' },
+    { src: 'assets/images/bus/1.png', line: 'Everything eats itself.' },
+    { src: 'assets/images/bus/1.png', line: 'Computers sleep too.' },
+    { src: 'assets/images/bus/1.png', line: 'Computers talk to you often.' },
+    { src: 'assets/images/bus/1.png', line: 'Everything needs a heart.' }
   ];
   const gridOne = document.getElementById('imageGridTwo');
   imageOptionsFirst.forEach(option => {
@@ -425,15 +425,15 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
 
   // Second grid :D
   const imageOptionsSecond = [
-    { src: 'assets/images/flower/1.png', line: 'Everything starts at once.' },
-    { src: 'assets/images/flower/7.png', line: 'Everything hits the wall.' },
-    { src: 'assets/images/flower/3.png', line: 'You are tired.' },
-    { src: 'assets/images/flower/4.png', line: 'You watch unknowingly.' },
-    { src: 'assets/images/flower/8.png', line: 'Some things must not be remembered.' },
-    { src: 'assets/images/flower/6.png', line: 'Everything eats itself.' },
-    { src: 'assets/images/flower/5.png', line: 'Computers sleep too.' },
-    { src: 'assets/images/flower/9.png', line: 'Computers talk to you often.' },
-    { src: 'assets/images/flower/2.png', line: 'Everything needs a heart.' }
+    { src: 'assets/images/bus/1.png', line: 'HEAVY ETERNAL.' },
+    { src: 'assets/images/bus/1.png', line: 'PINK DOMINO.' },
+    { src: 'assets/images/bus/1.png', line: 'FLYING DIXIE.' },
+    { src: 'assets/images/bus/1.png', line: 'ETERNAL SIREN.' },
+    { src: 'assets/images/bus/1.png', line: 'KOSMETIKA.' },
+    { src: 'assets/images/bus/1.png', line: 'CANDY GIRL.' },
+    { src: 'assets/images/bus/1.png', line: 'CITY GIRL.' },
+    { src: 'assets/images/bus/1.png', line: 'CANDY APPLE.' },
+    { src: 'assets/images/bus/1.png', line: 'HALO SUNSHINE.' }
   ];
   const gridTwo = document.getElementById('imageGrid');
   imageOptionsSecond.forEach(option => {
@@ -446,18 +446,18 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
 
    // Second grid :D
    const imageOptionsThird = [
-    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+    { src: 'assets/images/flower/1.png', line: 'CANDLE STAR.' },
+    { src: 'assets/images/flower/7.png', line: 'RUNAWAY BRIDE.' },
+    { src: 'assets/images/flower/3.png', line: 'GOOD MANNERS.' },
+    { src: 'assets/images/flower/4.png', line: 'HAIL TO REASON.' },
+    { src: 'assets/images/flower/8.png', line: 'BLUSHING GROOM.' },
+    { src: 'assets/images/flower/6.png', line: 'CANDY STRIPES.' },
+    { src: 'assets/images/flower/5.png', line: 'WILD RISK.' },
+    { src: 'assets/images/flower/9.png', line: 'NORTHERN DANCER.' },
+    { src: 'assets/images/flower/2.png', line: 'COSMIC BOMB.' }
   ];
   const gridThree = document.getElementById('imageGridThree');
-  imageOptionsSecond.forEach(option => {
+  imageOptionsThird.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
@@ -466,18 +466,18 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
   });
 
   const imageOptionsFour = [
-    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+    { src: 'assets/images/love/4.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/2.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/3.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/5.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/6.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/7.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/8.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/9.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/22.png', line: 'A computer loves you.' }
   ];
   const gridFour = document.getElementById('imageGridFour');
-  imageOptionsSecond.forEach(option => {
+  imageOptionsFour.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
@@ -486,18 +486,18 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
   });
 
   const imageOptionsFive = [
-    { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
+    { src: 'assets/images/blob/15.png', line: 'EVERYTHING IS ROYAL CHARGER.' },
+    { src: 'assets/images/blob/16.png', line: 'EVERYTHING IS SPRING RISK.' },
+    { src: 'assets/images/blob/17.png', line: 'EVERYTHING IS FUN HOUSE.' },
+    { src: 'assets/images/blob/18.png', line: 'EVERYTHING IS WILD VIOLET.' },
+    { src: 'assets/images/blob/19.png', line: 'EVERYTHING IS POETS STAR.' },
+    { src: 'assets/images/blob/20.png', line: 'EVERYTHING IS SATIETY.' },
+    { src: 'assets/images/blob/21.png', line: 'EVERYTHING IS VAIN DUCHESS.' },
+    { src: 'assets/images/blob/22.png', line: 'EVERYTHING IS LUST APPLE.' },
+    { src: 'assets/images/blob/23.png', line: 'EVERYTHING IS ROYAL LIGHT.' }
   ];
   const gridFive = document.getElementById('imageGridFive');
-  imageOptionsSecond.forEach(option => {
+  imageOptionsFive.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
@@ -517,7 +517,7 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
     { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
   ];
   const gridSix = document.getElementById('imageGridSix');
-  imageOptionsSecond.forEach(option => {
+  imageOptionsSix.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
@@ -527,17 +527,17 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
 
   const imageOptionsSeven = [
     { src: 'assets/images/computer/10.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/11.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/dream/1.png', line: 'A computer loves you.' },
+    { src: 'assets/images/love/6.png', line: 'A computer loves you.' },
     { src: 'assets/images/computer/13.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/14.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/15.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/16.png', line: 'A computer loves you.' },
-    { src: 'assets/images/computer/17.png', line: 'A computer loves you.' },
+    { src: 'assets/images/flower/8.png', line: 'A computer loves you.' },
+    { src: 'assets/images/kiss/12.png', line: 'A computer loves you.' },
+    { src: 'assets/images/dream/3.png', line: 'A computer loves you.' },
+    { src: 'assets/images/kiss/14.png', line: 'A computer loves you.' },
     { src: 'assets/images/computer/18.png', line: 'A computer loves you.' }
   ];
   const gridSeven = document.getElementById('imageGridSeven');
-  imageOptionsSecond.forEach(option => {
+  imageOptionsSeven.forEach(option => {
     const img = document.createElement('img');
     img.src = option.src;
     img.setAttribute('data-line', option.line);
@@ -599,3 +599,18 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
       alert("Could not access webcam. Please allow camera access.");
     }
   }
+
+
+  document.getElementById("info").addEventListener("click", function () {
+    const infoDisplay = document.getElementById("infoDisplay");
+    if (infoDisplay.style.display === "block") {
+      infoDisplay.style.display = "none";
+    } else {
+      infoDisplay.style.display = "block";
+    }
+  });
+  
+
+  document.getElementById("closeInfo").addEventListener("click", function () {
+    document.getElementById("infoDisplay").style.display = "none";
+  });

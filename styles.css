@@ -258,6 +258,7 @@ body {
 
 
 .image-grid {
+   
     position: absolute;
     top: 23%;
     left: 2%;
@@ -267,6 +268,7 @@ body {
     
   }
   .image-grid img {
+    background-color: rgb(118, 127, 130);
     border: 2px solid black;
     width: 90%;
     cursor: pointer;
@@ -371,9 +373,10 @@ body {
     cursor: pointer;
     border: none;
     color: #eee;
+    transition: background-color 0.3s ease;
   }
   button:hover {
-    background-color: skyblue;
+    background-color: rgb(45, 130, 156);
   }
   label {
     display: block;
@@ -381,6 +384,16 @@ body {
     cursor: pointer;
   }
  
+  #infoDisplay{
+    position: absolute;
+    border: solid 2px black;
+    bottom: 2%;
+    left: 5%;
+    width: 60%;
+    height: 10%;
+    padding: 1%;
+    display: none;
+  }
 
   
   
@@ -409,6 +422,7 @@ body {
     margin: 20px auto;
     background-size: cover;
     background-position: center;
+    background-color: rgb(118, 127, 130);
     border: 2px solid #ccc;
   }
   
@@ -443,22 +457,22 @@ body {
 
   #distortImages{
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 10%;
     width: 60%;
   }
   
   /* Image placeholders — replace with your real image paths */
   #captchaTen #captchaTenImage1 {
-    background-image: url('assets/images/computer/12.png');
+    background-image: url('assets/images/body/1.png');
   }
   
   #captchaTen #captchaTenImage2 {
-    background-image: url('assets/images/flower/4.png');
+    background-image: url('assets/images/body/2.png');
   }
   
   #captchaTen #captchaTenImage3 {
-    background-image: url('assets/images/cozy/river.gif');
+    background-image: url('assets/images/body/3.png');
   }
   
   /* Sliders under each image */
