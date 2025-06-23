@@ -404,15 +404,15 @@ document.getElementById('nextTwentyBtn').addEventListener('click', () => {
 
   // Image Grids :P
   const imageOptionsFirst = [
-    { src: 'assets/images/bus/1.png', line: 'Everything starts at once.' },
-    { src: 'assets/images/bus/1.png', line: 'Everything hits the wall.' },
-    { src: 'assets/images/bus/1.png', line: 'You are tired.' },
-    { src: 'assets/images/bus/1.png', line: 'You watch unknowingly.' },
-    { src: 'assets/images/bus/1.png', line: 'Some things must not be remembered.' },
-    { src: 'assets/images/bus/1.png', line: 'Everything eats itself.' },
-    { src: 'assets/images/bus/1.png', line: 'Computers sleep too.' },
-    { src: 'assets/images/bus/1.png', line: 'Computers talk to you often.' },
-    { src: 'assets/images/bus/1.png', line: 'Everything needs a heart.' }
+   { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS ROYAL CHARGER.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS SPRING RISK.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS FUN HOUSE.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS WILD VIOLET.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS POETS STAR.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS SATIETY.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS VAIN DUCHESS.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS LUST APPLE.' },
+    { src: 'assets/images/bus/1.png', line: 'EVERYTHING IS ROYAL LIGHT.' }
   ];
   const gridOne = document.getElementById('imageGridTwo');
   imageOptionsFirst.forEach(option => {
